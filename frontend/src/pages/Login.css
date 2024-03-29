@@ -1,0 +1,129 @@
+.log-in1,
+.logo-1-icon4 {
+  position: relative;
+  height: 116px;
+}
+.logo-1-icon4 {
+  width: 292px;
+  object-fit: cover;
+}
+.log-in1 {
+  width: 367px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.logo-1-parent1 {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 949px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xl) 68px;
+  box-sizing: border-box;
+  font-size: var(--font-size-13xl);
+}
+.who-are-you {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.who-are-you-parent {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--padding-31xl) 0;
+  box-sizing: border-box;
+  gap: var(--gap-12xl);
+  text-align: right;
+}
+.frame-child3 {
+  width: 427px;
+  position: relative;
+  background-color: var(--color-white);
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-parent2 {
+  position: absolute;
+  top: 150px;
+  left: 395px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-31xl) 0;
+  gap: var(--gap-12xl);
+}
+.log-in2 {
+  position: relative;
+}
+.dont-have-an,
+.log-in-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.log-in-container {
+  top: 412px;
+  left: 402px;
+  background-color: var(--color-darkslategray-100);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-24xl);
+  color: var(--color-khaki-200);
+}
+.dont-have-an {
+  top: 476px;
+  left: 1px;
+  width: 949px;
+}
+.frame-child6 {
+  position: absolute;
+  top: 159px;
+  left: 17.5px;
+  border-top: 1px solid var(--color-darkslategray-100);
+  box-sizing: border-box;
+  width: 907px;
+  height: 1px;
+}
+.frame-parent1,
+.login {
+  position: relative;
+  overflow: hidden;
+}
+.frame-parent1 {
+  width: 950px;
+  background-color: var(--color-khaki-100);
+  height: 530px;
+  flex-shrink: 0;
+}
+.login {
+  width: 100%;
+  background-color: var(--color-darkslategray-100);
+  height: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-inter);
+}

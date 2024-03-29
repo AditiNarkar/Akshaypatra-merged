@@ -1,0 +1,74 @@
+.on-27th-march {
+  margin: 0;
+}
+.by-sameer {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.ngo-1-on-container1 {
+  width: 100%;
+}
+.ngo-1-on-container {
+  position: absolute;
+  top: 8px;
+  left: 61px;
+  display: flex;
+  align-items: center;
+  width: 228px;
+}
+.mditick-outline-icon {
+  position: absolute;
+  top: 10px;
+  left: 28px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.fish-curry-4-kg2 {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: var(--padding-5xl);
+}
+.fish-curry-container2 {
+  width: 232px;
+  position: relative;
+  display: inline-block;
+}
+.fish-curry-4-kg-group {
+  position: absolute;
+  top: 141px;
+  left: 8px;
+  width: 303px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+  color: var(--color-dimgray);
+}
+.pickup1 {
+  position: absolute;
+  top: 87px;
+  left: 15px;
+  display: inline-block;
+  width: 274px;
+}
+.donated-food1 {
+  position: absolute;
+  top: 114px;
+  left: 14px;
+}
+.ngo-1-on-27th-march-by-sameer-parent {
+  width: 323px;
+  position: relative;
+  background-color: var(--color-white);
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-inter);
+}

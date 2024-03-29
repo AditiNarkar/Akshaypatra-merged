@@ -1,0 +1,128 @@
+.logo-1-icon5 {
+  width: 292px;
+  position: relative;
+  height: 116px;
+  object-fit: cover;
+}
+.donor-registration {
+  width: 631px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 116px;
+  flex-shrink: 0;
+}
+.logo-1-parent2 {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 949px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xl) 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-13xl);
+}
+.name-of-donor {
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.name-of-donor-parent {
+  position: absolute;
+  top: 187px;
+  left: 0;
+  width: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--padding-xl) 0;
+  box-sizing: border-box;
+  gap: var(--gap-8xl);
+  text-align: right;
+}
+.frame-child7 {
+  width: 427px;
+  position: relative;
+  background-color: var(--color-white);
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-parent4 {
+  position: absolute;
+  top: 184px;
+  left: 395px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl) 0;
+  gap: var(--gap-8xl);
+}
+.sign-in1 {
+  position: relative;
+}
+.already-have-an1,
+.sign-in-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-in-container {
+  top: 420px;
+  left: 402px;
+  background-color: var(--color-darkslategray-100);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-24xl);
+  color: var(--color-khaki-200);
+}
+.already-have-an1 {
+  top: 484px;
+  left: 1px;
+  width: 949px;
+}
+.frame-child10 {
+  position: absolute;
+  top: 164px;
+  left: 24.5px;
+  border-top: 1px solid var(--color-darkslategray-100);
+  box-sizing: border-box;
+  width: 907px;
+  height: 1px;
+}
+.donor-register,
+.frame-parent3 {
+  position: relative;
+  overflow: hidden;
+}
+.frame-parent3 {
+  width: 950px;
+  background-color: var(--color-khaki-100);
+  height: 520px;
+  flex-shrink: 0;
+}
+.donor-register {
+  width: 100%;
+  background-color: var(--color-darkslategray-100);
+  height: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-inter);
+}

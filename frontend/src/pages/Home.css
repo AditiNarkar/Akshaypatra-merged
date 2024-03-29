@@ -1,0 +1,170 @@
+.food1-1-icon {
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  width: 100%;
+  height: 956.6px;
+  object-fit: cover;
+}
+.logo-1-icon {
+  width: 435px;
+  position: relative;
+  height: 172.8px;
+  object-fit: cover;
+}
+.a-pot-that {
+  font-weight: 500;
+}
+.a-pot-that,
+.ngo-service,
+.what-describes-you {
+  width: 92%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  flex-shrink: 0;
+}
+.ngo-service {
+  width: 100px;
+  height: 57px;
+}
+.ngo-service-wrapper {
+  width: 318px;
+  background-color: var(--color-darkslategray-100);
+  height: 173px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.food-donor-wrapper,
+.frame-parent,
+.ngo-service-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.food-donor-wrapper {
+  width: 318px;
+  background-color: var(--color-darkslategray-100);
+  height: 173px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.frame-parent {
+  gap: var(--gap-3xs);
+  color: var(--color-khaki-200);
+}
+.food1-1-parent,
+.logo-1-parent {
+  position: absolute;
+  overflow: hidden;
+}
+.logo-1-parent {
+  top: 99px;
+  left: 43px;
+  background-color: var(--color-khaki-200);
+  width: 92%;
+  height: 526px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+}
+.food1-1-parent {
+  top: 0;
+  left: 1px;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 740px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-inter);
+}
+.about {
+  margin: 0;
+  width: 100%;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  flex-shrink: 0;
+}
+.logo-1-icon1 {
+  width: 503px;
+  position: relative;
+  height: 199.8px;
+  object-fit: cover;
+}
+.frame-child {
+  width: 1px;
+  position: relative;
+  border-right: 1px solid var(--color-darkslategray-100);
+  box-sizing: border-box;
+  height: 501px;
+}
+.welcome-to-akshaypatra {
+  margin: 0;
+}
+.welcome-to-akshaypatra-container1 {
+  width: 100%;
+}
+.welcome-to-akshaypatra-container {
+  width: 730px;
+  position: relative;
+  letter-spacing: 0.05em;
+  line-height: 120.91%;
+  display: flex;
+  align-items: center;
+  height: 310px;
+  flex-shrink: 0;
+}
+.about-parent,
+.logo-1-group {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 63px;
+  box-sizing: border-box;
+  gap: 44px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+.about-parent {
+  position: absolute;
+  top: 742px;
+  left: -2px;
+  background-color: var(--color-khaki-200);
+  height: 791px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 147px 0;
+  gap: 29px;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  color: var(--color-darkslategray-100);
+  font-family: var(--font-inter);
+}
+.home {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1533px;
+  overflow: hidden;
+}

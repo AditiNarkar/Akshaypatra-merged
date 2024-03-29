@@ -1,0 +1,253 @@
+.logo-1-icon7 {
+    width: 143.5px;
+    position: relative;
+    height: 57px;
+    object-fit: cover;
+  }
+  .donation-details {
+    width: 367px;
+    position: relative;
+    font-size: var(--font-size-13xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    flex-shrink: 0;
+  }
+  .frame-child15 {
+    width: 1210px;
+    position: relative;
+    border-top: 1px solid var(--color-darkslategray-100);
+    box-sizing: border-box;
+    height: 1px;
+  }
+  .select-pickup-address {
+    width: 1200px;
+    position: relative;
+    display: flex;
+    text-align: left;
+    align-items: flex-end;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .near-abc-soc2,
+  .resto12 {
+    width: 180px;
+    position: relative;
+  }
+  .resto12 {
+    display: flex;
+    align-items: center;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  .near-abc-soc2 {
+    display: inline-block;
+  }
+  .resto1-container {
+    position: absolute;
+    top: 0.5px;
+    left: 0;
+    width: 180px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-8xs);
+    box-sizing: border-box;
+    gap: var(--gap-8xs);
+  }
+  .frame-wrapper-active,
+  .frame-wrapper1 {
+    width: 180px;
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .frame-wrapper-active {
+    background-color: var(--color-darkslategray-100);
+    color: var(--color-khaki-100);
+  }
+  .frame-wrapper1 {
+    background-color: var(--color-khaki-100);
+    border: 1px solid var(--color-darkslategray-100);
+    box-sizing: border-box;
+  }
+  .add-icon {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    object-fit: cover;
+  }
+  .frame-parent7,
+  .no {
+    display: flex;
+    align-items: center;
+  }
+  .frame-parent7 {
+    width: 1200px;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  .no {
+    width: 52px;
+    position: relative;
+    justify-content: center;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .frame-child16 {
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-darkslategray-100);
+    box-sizing: border-box;
+    height: 59px;
+  }
+  .dish,
+  .vegnon-veg {
+    width: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .vegnon-veg {
+    width: 214px;
+  }
+  .prepared-before-hrs {
+    width: 207px;
+    position: relative;
+    height: 40px;
+  }
+  .no-parent,
+  .prepared-before-hrs,
+  .quantity-kg {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .quantity-kg {
+    width: 164px;
+    position: relative;
+    height: 40px;
+  }
+  .no-parent {
+    width: 1200px;
+    height: 50px;
+    overflow: hidden;
+    flex-direction: row;
+    gap: var(--gap-3xs);
+  }
+  .frame-child20,
+  .frame-child22,
+  .frame-child24,
+  .frame-child26,
+  .frame-child28 {
+    width: 52px;
+    position: relative;
+    background-color: var(--color-white);
+    height: 30px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .frame-child20{
+    background-color: var(--color-darkslategray-100);
+    color: var(--color-khaki-200);
+    font-size: 14px;
+    justify-content: center;
+  }
+  .frame-child22,
+  .frame-child24,
+  .frame-child26,
+  .frame-child28 {
+    width: 450px;
+  }
+  .frame-child24,
+  .frame-child26,
+  .frame-child28 {
+    width: 210px;
+  }
+  .frame-child26,
+  .frame-child28 {
+    width: 207px;
+  }
+  .frame-child28 {
+    width: 164px;
+  }
+  .frame-parent9 {
+    width: 1200px;
+    height: 40px;
+    flex-shrink: 0;
+    flex-direction: row;
+    gap: var(--gap-3xs);
+  }
+  .add-container,
+  .frame-parent8,
+  .frame-parent9 {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .add-container {
+    width: 1200px;
+    height: 40px;
+    flex-shrink: 0;
+    flex-direction: row;
+  }
+  .frame-parent8 {
+    overflow-y: auto;
+    background-color: var(--color-darkslategray-200);
+    flex-direction: column;
+    font-size: var(--font-size-lg);
+  }
+  .confirm-pickup {
+    position: relative;
+  }
+  .confirm-pickup-wrapper {
+    background-color: var(--color-darkslategray-100);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-2xs) var(--padding-24xl);
+    color: var(--color-khaki-200);
+  }
+  .donation-form,
+  .logo-1-parent4 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo-1-parent4 {
+    width: 1260px;
+    background-color: var(--color-khaki-100);
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-11xl) var(--padding-11xl);
+    box-sizing: border-box;
+    gap: var(--gap-xs);
+  }
+  .donation-form {
+    width: 100%;
+    background-color: var(--color-darkslategray-100);
+    max-width: 100%;
+    height: 796px;
+    justify-content: flex-start;
+    gap: var(--gap-14xl);
+    text-align: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-darkslategray-100);
+    font-family: var(--font-inter);
+  }
+  

@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,500&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-13xl: 32px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-khaki-100: #edffa2;
+  --color-khaki-200: rgba(237, 255, 162, 0.87);
+  --color-darkslategray-100: #323a2b;
+  --color-darkslategray-200: rgba(50, 58, 43, 0);
+  --color-gray: rgba(255, 255, 255, 0);
+  --color-dimgray: #585353;
+
+  /* Gaps */
+  --gap-765xl: 784px;
+  --gap-3xs: 10px;
+  --gap-13xl: 32px;
+  --gap-8xl: 27px;
+  --gap-12xl: 31px;
+  --gap-14xl: 33px;
+  --gap-xs: 12px;
+  --gap-8xs: 5px;
+  --gap-728xl: 747px;
+  --gap-mini: 15px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-2xs: 11px;
+  --padding-24xl: 43px;
+  --padding-31xl: 50px;
+  --padding-5xl: 24px;
+  --padding-xl: 20px;
+  --padding-8xs: 5px;
+  --padding-11xl: 30px;
+  --padding-xs: 12px;
+
+  /* Border radiuses */
+  --br-21xl: 40px;
+}

@@ -1,0 +1,197 @@
+.logo-1-icon8,
+.my-donations {
+  position: relative;
+  height: 116px;
+}
+.logo-1-icon8 {
+  width: 292px;
+  object-fit: cover;
+}
+.my-donations {
+  width: 631px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.logo-1-parent5 {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 949px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xl) 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-13xl);
+  color: var(--color-darkslategray-100);
+}
+.add-donation {
+  position: relative;
+}
+.add-donation-wrapper,
+.frame-child38 {
+  position: absolute;
+  box-sizing: border-box;
+}
+.add-donation-wrapper {
+  top: 177px;
+  left: 367px;
+  background-color: var(--color-darkslategray-100);
+  width: 222px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-8xs) var(--padding-xs);
+}
+.frame-child38 {
+  top: 153px;
+  left: 24.5px;
+  border-top: 1px solid var(--color-darkslategray-100);
+  width: 907px;
+  height: 1px;
+}
+.approved-pickups-wrapper,
+.auto-approve {
+  position: absolute;
+  left: 64px;
+  width: 381px;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.auto-approve {
+  top: 267.5px;
+  height: 302px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 0;
+  gap: var(--gap-3xs);
+}
+.approved-pickups-wrapper {
+  top: 232.5px;
+  background-color: var(--color-darkslategray-100);
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-8xs) var(--padding-xs);
+}
+.published-on27th-march {
+  position: absolute;
+  top: 8px;
+  left: 61px;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  width: 228px;
+  height: 32px;
+}
+.fish-curry-4-kg {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: var(--padding-5xl);
+}
+.fish-curry-container {
+  width: 232px;
+  position: relative;
+  display: inline-block;
+}
+.fish-curry-4-kg-parent {
+  position: absolute;
+  top: 117px;
+  left: 8px;
+  width: 303px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+  color: var(--color-dimgray);
+}
+.pickup {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  display: inline-block;
+  width: 287px;
+}
+.donated-food,
+.makicross-icon {
+  position: absolute;
+  top: 85px;
+  left: 14px;
+}
+.makicross-icon {
+  top: 12px;
+  left: 26px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.published-on27th-march-parent {
+  width: 323px;
+  position: relative;
+  background-color: var(--color-white);
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.auto-approve1,
+.outdated-pickups-wrapper {
+  position: absolute;
+  left: 492px;
+  width: 381px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.auto-approve1 {
+  overflow-y: auto;
+  top: 267.5px;
+  height: 302px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 0;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-darkslategray-100);
+}
+.outdated-pickups-wrapper {
+  top: 232.5px;
+  background-color: var(--color-darkslategray-100);
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-8xs) var(--padding-xs);
+}
+.frame-parent11 {
+  width: 950px;
+  position: relative;
+  background-color: var(--color-khaki-100);
+  height: 616px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.resto-donations {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-darkslategray-100);
+  height: 740px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-khaki-200);
+  font-family: var(--font-inter);
+}
