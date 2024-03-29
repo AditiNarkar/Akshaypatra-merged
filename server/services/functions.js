@@ -147,7 +147,7 @@ exports.donorDetails = async(req,res)=> {
         const addDonation = {
             dish: dish,
             veg_nonveg: veg_nonveg, 
-            prepTime: prepHours,
+            prepHours: prepHours,
             quantity: quantity
         }
         const donation = await HOTEL.findOneAndUpdate({_id:req.rootUser._id},{$push : {donations : addDonation}}, {new : true} )
