@@ -13,6 +13,7 @@ import DonorAddAddress from "./pages/DonorAddAddress";
 import RestoDonations1 from "./pages/RestoDonations1";
 import NGOAcceptance from "./pages/NGOAcceptance";
 import DonationForm from "./pages/DonationForm";
+import Maps from "./pages/Maps"
 
 function App() {
   const action = useNavigationType();
@@ -84,6 +85,7 @@ function App() {
       <Route path="/donation-form" element={<DonationForm />} />
       <Route path="/resto-donations" element={<RestoDonations1 />} />
       <Route path="/ngo-acceptance" element={<NGOAcceptance />} />
+      <Route path="/maps" element={<Maps />} />
     </Routes>
   );
 }
