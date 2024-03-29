@@ -30,7 +30,7 @@ const Maps = () => {
           const location = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
           map.setView(location);
           // Example of adding a marker for the submitted address
-          const marker = L.marker(location).addTo(map).bindPopup(`Requested Location<br>Food Donated: ${foodAmount} kg`);
+          const marker = L.marker(location).addTo(map).bindPopup(`<div>Requested Location<br>Food Donated: ${foodAmount} kg</div><button id="redirectBtn">Redirect</button>`);
           // Add the marker to the requests array for later use
           setRequests([...requests, marker]);
           
@@ -57,7 +57,11 @@ const Maps = () => {
           // Add markers for each hotel found
           const hotelMarkers = data.map(hotel => {
             const hotelLocation = [parseFloat(hotel.lat), parseFloat(hotel.lon)];
-            const hotelMarker = L.marker(hotelLocation).addTo(map).bindPopup(`Hotel: ${hotel.display_name}<br>Food Donated: ${foodDonations[hotelName]} kg`);
+            const hotelMarker = L.marker(hotelLocation).addTo(map).bindPopup(`<div>Hotel: ${hotel.display_name}<br>Food Donated: ${foodDonations[hotelName]} kg</div><button id="redirectBtn">Redirect</button>`);
+            // Event listener for the button inside the pop-up
+            hotelMarker.on('popupopen', () => {
+              document.getElementById('redirectBtn').addEventListener('click', handleRedirect);
+            });
             return hotelMarker;
           });
           // Add the hotel markers to the hotels array for later use
@@ -70,6 +74,13 @@ const Maps = () => {
         console.error('Error fetching hotel data:', error);
         alert('Error fetching hotel data');
       });
+  };
+
+  const handleRedirect = () => {
+    // Redirect to another page, you can use React Router's useHistory hook for navigation
+    // Example:
+    // history.push('/another-page');
+    window.location.href = '/another-page'; // Redirect using window.location
   };
 
   return (
