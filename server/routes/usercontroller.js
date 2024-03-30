@@ -52,6 +52,49 @@ router.post('/pickupRestaurant', authenticateDonor, async(req,res)=>{
         }
 })
 
+router.get('/pickupRestaurant', authenticateDonor, async(req,res)=>{
+        try{
+            const isDonor = await HOTEL.findOne( {_id:req.rootUser._id})
+            if ( !isDonor ){
+                return res.status(500).json({msg: " Unauthorized. "})
+            }
+    
+            res.status(201).json({ status: 201, restos: isDonor.restraunts });
+        }
+        catch(err){
+            console.log("Error at getting Restaurants", err)
+        }
+})
+
+router.delete('/pickupRestaurant', authenticateDonor, async(req,res)=>{
+        try{
+                const {restoId} = req.body
+                console.log("restoID:", restoId, " donor: ", req.rootUser._id)
+
+                const isDonor = await HOTEL.findOne( {_id:req.rootUser._id})
+
+                if ( !isDonor ){
+                        return res.status(500).json({msg: " Unauthorized. "})
+                }
+                const restaurantIndex = isDonor.restraunts.findIndex(
+                        restaurant => restaurant._id.toString() === restoId
+                );
+
+                if (restaurantIndex === -1) {
+                        return res.status(422).json({ msg: "Restaurant not found for the user "});
+                }
+
+                isDonor.restraunts.splice(restaurantIndex, 1);
+
+                await isDonor.save();
+
+                res.status(201).json({ status: 201, msg: "Deleted" });
+        }
+        catch(err){
+                console.log("Error at getting Restaurants", err)
+        }
+})
+
 router.route('/donationDetails')
 .get(authenticateDonor, (req,res) => {res.status(200).json({rootUser:req.rootUser})})
 .post(authenticateDonor, donorDetails)

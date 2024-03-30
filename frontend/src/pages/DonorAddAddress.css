@@ -114,15 +114,16 @@
 .resto1-parent,
 .your-restaurants-parent {
   width: 236px;
-  overflow: hidden;
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 .your-restaurants-parent {
-  overflow-y: auto;
-  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 300px;
   position: absolute;
   top: 192.5px;
   left: 609px;

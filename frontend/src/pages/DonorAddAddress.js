@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import "./DonorAddAddress.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const DonorAddAddress = () => {
 
@@ -36,7 +36,10 @@ const DonorAddAddress = () => {
       
       if(responseData.status == 201){
         alert(responseData.msg)
-        //window.location.href = "http://localhost:3000/login";
+        document.getElementsByName("name").value = "";
+        document.getElementsByName("licenseNumber").value = "";
+        document.getElementsByName("address").value = "";
+        getData()
       }
       else{
         alert(responseData.msg)
@@ -44,6 +47,70 @@ const DonorAddAddress = () => {
     } 
     catch (error) {
         console.error('Error sending data to the backend:', error);
+    }
+  }
+
+
+
+
+  const [restos, setrestos] = useState()
+
+  const getData = async () => {
+    try{
+      const res = await fetch(URL,{
+        method: "GET", 
+        credentials: 'include',
+        headers:{
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+      })
+
+      const data = await res.json()
+      console.log("restos: ", data)
+      if( data.status==201)
+      {
+        setrestos(data.restos)
+      }
+      else
+        alert(data.msg)
+     
+      
+    }
+    
+    catch(e){
+      console.log(e)
+    }
+  }
+
+  useEffect(()=> { getData() } , [])
+
+
+  const delData = async ( id) => {
+    // e.preventDefault()
+    try{
+      const res = await fetch(URL,{
+        method: "DELETE", 
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({restoId: id})
+      })
+
+      const data = await res.json()
+      
+      if( data.status==201)
+      {
+        alert(data.msg)
+        getData()
+      }
+      else
+        alert(data.msg)
+    }
+    
+    catch(err){
+      console.log(err)
     }
   }
 
@@ -81,17 +148,30 @@ const DonorAddAddress = () => {
         <div className="your-restaurants-parent">
           <b className="your-restaurants">Your Restaurants:</b>
 
-          <div className="resto1-parent">
-            <b className="id">Resto1 <button style={{ backgroundColor: "var(--color-darkslategray-100)", color: "var(--color-khaki-200)", fontSize: "14px", marginLeft:"10px"}}>Del</button></b>
-            <i className="id">ID</i>
-            <div className="near-abc-soc">Near abc soc zxcvbndfgudshvushvushcnhjbzscjzhsfcujhfujhfuv   </div>
-          </div>
+          {
+            (restos != null || restos != undefined ) ?
+              restos.map((resto) => {
 
-          <div className="resto1-parent">
-            <b className="id">Resto1 <button style={{ backgroundColor: "var(--color-darkslategray-100)", color: "var(--color-khaki-200)", fontSize: "14px", marginLeft:"10px"}}>Del</button></b>
-            <i className="id">ID</i>
-            <div className="near-abc-soc">Near abc soc zxcvbndfgudshvushvushcnhjbzscjzhsfcujhfujhfuv   </div>
-          </div>
+                return(
+                  <>
+                  <div className="resto1-parent">
+                    <b className="id">{resto.name} <button onClick={()=> delData(resto._id)} style={{ backgroundColor: "var(--color-darkslategray-100)", color: "var(--color-khaki-200)", fontSize: "14px", marginLeft:"10px"}}>Del</button></b>
+                    <i className="id">{resto.licenseNumber} </i>
+                    <div className="near-abc-soc">{resto.address}  </div>
+                  </div>
+                  </>
+                )
+              })
+              :
+             
+              <>
+              <div className="resto1-parent">
+                <b className="id">No Restaurants added.</b>
+              </div>
+              </>
+              
+          }
+          
 
         </div>
         <div className="frame-child14" />
