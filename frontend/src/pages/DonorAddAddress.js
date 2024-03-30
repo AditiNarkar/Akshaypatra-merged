@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const DonorAddAddress = () => {
 
-  const URL = "/api/pickupRestaurant"
+  const URL = "http://localhost:5000/api/pickupRestaurant"
 
   const [resto, setresto] = useState({
     name:"", licenseNumber:"", address:""

@@ -2,10 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {registerNgo, registerDonor,login,pickupRestaurant, donorDetails} = require('../services/functions.js')
 const {authenticateDonor, authenticateNgo} = require('../middleware/authenticate.js')
-// const {NGO, HOTEL} = require('../models/usermodel.js')
-
-
-// Define routes
+const {NGO, HOTEL} = require('../models/usermodel.js')
 
 router.post('/registerNgo',registerNgo)
 router.post('/registerDonor',registerDonor)
@@ -53,7 +50,7 @@ router.post('/pickupRestaurant', authenticateDonor, async(req,res)=>{
         catch(err){
             console.log("Error at adding Restaurants", err)
         }
-    })
+})
 
 router.route('/donationDetails')
 .get(authenticateDonor, (req,res) => {res.status(200).json({rootUser:req.rootUser})})
