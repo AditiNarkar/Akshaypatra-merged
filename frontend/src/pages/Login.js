@@ -1,15 +1,15 @@
 import Header from "../components/Header";
 import "./Login.css";
+import React, { useState } from 'react';
 
 const Login = () => {
 
-  const URL = "http://localhost:5000/api/login"
+  const URL = "api/login"
 
   const [donor, setDonor] = useState({
     identity:"", email:"", password:""
   });
 
-  const navigate = useNavigate()
 
   let name, value
   const handleInputs = (e) => {
@@ -18,13 +18,14 @@ const Login = () => {
     setDonor({...donor,[name]:value });
   }
 
-  const login = async(e) => {
+  const post_login = async(e) => {
     e.preventDefault()
     const {identity, email, password} = donor
-
+    
     try {
-      const response = await fetch(registerDonorURL, {
+      const response = await fetch(URL, {
           method: 'POST',
+          credentials: "include",
           headers: {
               'Content-Type': 'application/json'
           },
@@ -33,12 +34,20 @@ const Login = () => {
       
       const responseData = await response.json();
       
-      if(responseData.status == 201){
+      if(responseData.status == 200){
+        console.log("responseData.identity:", responseData.identity)
+
         alert(responseData.msg)
-        navigate("/my-donations")
+
+        if(responseData.identity=="donor")
+          window.location.href = "http://localhost:3000/resto-donations"
+
+        // else if(responseData.identity=="ngo")
+        //   window.location.href("http://localhost:3000/my-donations")
+
       }
       else{
-        alert(responseData.msg)
+        alert("Unauthorized: ", responseData.msg)
       }
     } 
     catch (error) {
@@ -58,19 +67,19 @@ const Login = () => {
           <b className="log-in1">Log In</b>
         </div>
         <div className="who-are-you-parent">
-          <b style={{ justifyContent:"right"}} name="identity" value = {donor.identity} onChange={handleInputs}className="who-are-you">Who are you? :</b>
-          <b style={{ justifyContent:"right"}} name="email" value = {donor.email} onChange={handleInputs} className="who-are-you"> Email Id:</b>
-          <b style={{ justifyContent:"right"}} name="password" value = {donor.password} onChange={handleInputs} cclassName="who-are-you">Password:</b>
+          <b style={{ justifyContent:"right"}} className="who-are-you">Who are you? :</b>
+          <b style={{ justifyContent:"right"}} className="who-are-you"> Email Id:</b>
+          <b style={{ justifyContent:"right"}} className="who-are-you">Password:</b>
         </div>
         <div className="frame-parent2">
-          <select style={{border:"none"}} className="frame-child3" >
+          <select name="identity" value = {donor.identity} onChange={handleInputs} style={{border:"none"}} className="frame-child3" >
             <option value="ngo">NGO Service</option>
-            <option value="hotel">Food Donor</option>
+            <option value="donor">Food Donor</option>
           </select>
-          <input type="email" style={{border:"none"}} className="frame-child3" />
-          <input type="password" style={{border:"none"}} className="frame-child3" />
+          <input name="email" value = {donor.email} onChange={handleInputs}        type="email" style={{border:"none"}} className="frame-child3" />
+          <input name="password" value = {donor.password} onChange={handleInputs}  type="password" style={{border:"none"}} className="frame-child3" />
         </div>
-        <div className="log-in-container">
+        <div style={{ cursor:"pointer" }} className="log-in-container" onClick={post_login}>
           <b className="log-in2">Log In</b>
         </div>
         <b className="dont-have-an">Don’t have an account? Signup</b>

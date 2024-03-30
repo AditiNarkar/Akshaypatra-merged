@@ -96,7 +96,9 @@ ngoSchema.methods.generateNGOTokens = async function (res) {
             httpOnly: true,
             secure: false,
             sameSite: 'strict', //ssr attcaks
-            maxAge: 30*24*60*60*1000 //30 days
+            expires: new Date(
+                Date.now() + 30*  24 * 60 * 60 * 1000
+            )
         })
 
         return token
@@ -112,7 +114,9 @@ hotelSchema.methods.generateDonorTokens = async function (res){
             httpOnly: true,
             secure: false,
             sameSite: 'strict', //ssr attcaks
-            maxAge: 30*24*60*60*1000 //30 days
+            expires: new Date(
+                Date.now() + 30*  24 * 60 * 60 * 1000
+            )
         })
 
         return token

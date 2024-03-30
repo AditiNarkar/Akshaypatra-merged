@@ -54,17 +54,20 @@ exports.registerDonor = async(req,res) => {
     }
 }
 exports.login = async(req,res) => {
-   const {identity, email, password} = req.body
-   if(!identity || !email || !password ) {
-    return res.status(400).json({msg: "Please fill all fields"})
-   }
+
+    const {identity, email, password} = req.body
+    // console.log("from login backend identity: ", identity)
+
+    if(!identity || !email || !password ) {
+        return res.status(400).json({msg: "Please fill all fields"})
+    }
 
    try{
 
         switch(identity.toLowerCase()) {
             case "donor":
                 const donorExist = await HOTEL.findOne( {email: email})
-                console.log("donorExist:", email, " ", donorExist)
+                // console.log("donorExist:", email, " ", donorExist)
 
                 if(!donorExist){
                     return res.json({msg : "Account not found"})
@@ -75,8 +78,9 @@ exports.login = async(req,res) => {
                 }
                 const donorToken = await donorExist.generateDonorTokens(res)
                 console.log("Your generated token is: ",donorToken)
-                return res.json({status:200, msg:"Logged in", token:donorToken, donorExist:donorExist})
-            
+                // console.log("Cookies: ", req.cookies)
+                return res.json({status:200, msg:"Logged in", token:donorToken, donorExist:donorExist, identity: "donor"})
+
             case "ngo":
                 const ngoExist = await NGO.findOne( {email: email })
                 if(!ngoExist){
@@ -88,7 +92,7 @@ exports.login = async(req,res) => {
                 }
                 const ngoToken = await ngoExist.generateNGOTokens(res)
                 console.log("Your generated token is: ",ngoToken)
-                return res.json({status:200, msg:"Logged in", token:ngoToken, ngoExist:ngoExist})
+                return res.json({status:200, msg:"Logged in", token:ngoToken, ngoExist:ngoExist, identity: "ngo"})
         
         }
 
@@ -98,37 +102,44 @@ exports.login = async(req,res) => {
         
 }
 
-exports.pickupRestaurant = async(req,res)=>{
+// exports.pickupRestaurant = async(req,res)=>{
 
-    const {name, licenseNumber, address} = req.body
-    if(!name || !licenseNumber|| !address ){
-    return res.status(400).json({msg: "Please fill all fields"})
-    }
-    try{
-        const restoExist = await HOTEL.findOne( {_id:req.rootUser._id,'restraunts.licenseNumber': licenseNumber} )
-        if (restoExist) {
-            return res.status(422).json({msg : "Restaurant already exists"})
-        }
-        const newRestaurant = {
-            name : name, 
-            licenseNumber: licenseNumber,
-            address : address, 
-        }
-        const hotel = await HOTEL.findOneAndUpdate({}, {$push : {restraunts : newRestaurant}}, {new : true})
+//     const {name, licenseNumber, address} = req.body
+//     console.log("addresto: ", name, licenseNumber, address)
+//     if(!name || !licenseNumber|| !address ){
+//         return res.status(400).json({msg: "Please fill all fields"})
+//     }
+//     try{
 
-        const restaurantIndex = hotel.restraunts.length - 1
+//         const isDonor = await HOTEL.findOne( {_id:req.rootUser._id})
+//         if ( !isDonor ){
+//             return res.status(500).json({msg: " Unauthorized. "})
+//         }
+
+//         const restoExist = await HOTEL.findOne( {_id:req.rootUser._id,'restraunts.licenseNumber': licenseNumber} )
+//         if (restoExist) {
+//             return res.status(422).json({msg : "Restaurant already exists"})
+//         }
+//         const newRestaurant = {
+//             name : name, 
+//             licenseNumber: licenseNumber,
+//             address : address, 
+//         }
+//         const hotel = await HOTEL.findOneAndUpdate({ _id:req.rootUser._id }, {$push : {restraunts : newRestaurant}}, {new : true})
+
+//         const restaurantIndex = hotel.restraunts.length - 1
     
-        const appendedrestaurant = hotel.restraunts[restaurantIndex]
-        if (!hotel) {
-            return res.status(500).json({ status: 500 , msg: "Error adding Restaurant" });
-        }
+//         const appendedrestaurant = hotel.restraunts[restaurantIndex]
+//         if (!hotel) {
+//             return res.status(500).json({ status: 500 , msg: "Error adding Restaurant" });
+//         }
 
-        res.status(201).json({ status: 201, msg: "Restaurant added successfully" });
-    }
-    catch(err){
-        console.log("Error at adding Restaurants", err)
-    }
-}
+//         res.status(201).json({ status: 201, msg: "Restaurant added successfully" });
+//     }
+//     catch(err){
+//         console.log("Error at adding Restaurants", err)
+//     }
+// }
 
 exports.donorDetails = async(req,res)=> {
     const {dish, veg_nonveg, prepHours, quantity} = req.body

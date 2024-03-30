@@ -1,7 +1,58 @@
 import Header from "../components/Header";
 import "./DonorAddAddress.css";
+import React, { useState } from 'react';
 
 const DonorAddAddress = () => {
+
+  const URL = "/api/pickupRestaurant"
+
+  const [resto, setresto] = useState({
+    name:"", licenseNumber:"", address:""
+  });
+
+
+  let name, value
+  const handleInputs = (e) => {
+    name = e.target.name
+    value = e.target.value
+    setresto({...resto,[name]:value });
+  }
+
+  const addAddress = async(e) => {
+    e.preventDefault()
+    const {name, licenseNumber, address} = resto
+    // console.log("restoDetails: ", resto)
+    try {
+      const response = await fetch(URL, {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({name, licenseNumber, address})
+      });
+      
+      const responseData = await response.json();
+      
+      if(responseData.status == 201){
+        alert(responseData.msg)
+        //window.location.href = "http://localhost:3000/login";
+      }
+      else{
+        alert(responseData.msg)
+      }
+    } 
+    catch (error) {
+        console.error('Error sending data to the backend:', error);
+    }
+  }
+
+
+
+
+
+
+
   return (
     <div className="donor-add-address">
       <Header />
@@ -16,14 +67,15 @@ const DonorAddAddress = () => {
           <b style={{ justifyContent:"right"}} className="restaurant-name">Address:</b>
         </div>
         <div className="frame-parent6">
-          <input style={{border:"none"}} className="frame-child11" />
-          <input style={{border:"none"}} className="frame-child11" />
-          <textarea style={{border:"none"}} className="frame-child13" />
+        {/* {name, licenseNumber, address} */}
+          <input    name="name" value = {resto.name} onChange={handleInputs} style={{border:"none"}} className="frame-child11" />
+          <input    name="licenseNumber" value = {resto.licenseNumber} onChange={handleInputs}         style={{border:"none"}} className="frame-child11" />
+          <textarea name="address" value = {resto.address} onChange={handleInputs}   style={{border:"none"}} className="frame-child13" />
         </div>
-        <div style={{ height:"10px"}} className="add-wrapper">
+        <div style={{ height:"10px"}} className="add-wrapper" onClick={addAddress}>
           <b className="add">Add</b>
         </div>
-        <div style={{ height:"10px", top:"480px", left:"280px"}} className="add-wrapper">
+        <div style={{ height:"10px", top:"480px", left:"280px"}} className="add-wrapper" onClick={()=>window.location.href("http://localhost:3000/donation-form")}>
           <b className="add">Proceed to Donate</b>
         </div>
         <div className="your-restaurants-parent">

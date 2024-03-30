@@ -33,6 +33,7 @@ const NGORegister = () => {
       
       if(responseData.status == 201){
         alert(responseData.msg)
+        window.location.href("http://localhost:3000/login")
       }
       else{
         alert(responseData.msg)
@@ -66,20 +67,20 @@ const NGORegister = () => {
         </div>
         <div className="name-of-ngo-parent">
         {/* ngoName, ngoAddress, foundationId, email, password */}
-          <b style={{ justifyContent:"right"}} value={ngoName} onChange={(e) => setngoName(e.target.value)} name="ngoName" className="name-of-ngo">Name of NGO:</b>
-          <b style={{ justifyContent:"right"}} value={ngoAddress} onChange={(e) => setngoAddress(e.target.value)} name="ngoAddress" className="name-of-ngo">Address:</b>
-          <b style={{ justifyContent:"right"}} value={foundationId} onChange={(e) => setfoundationId(e.target.value)} name="foundationId" className="name-of-ngo">NGO Foundation Id:</b>
-          <b style={{ justifyContent:"right"}} value={email} onChange={(e) => setemail(e.target.value)} name="email" className="name-of-ngo">NGO Email Id:</b>
-          <b style={{ justifyContent:"right"}} value={password} onChange={(e) => setpassword(e.target.value)} name="password" className="name-of-ngo">Password:</b>
+          <b style={{ justifyContent:"right"}}  className="name-of-ngo">Name of NGO:</b>
+          <b style={{ justifyContent:"right"}}    className="name-of-ngo">Address:</b>
+          <b style={{ justifyContent:"right"}}    className="name-of-ngo">NGO Foundation Id:</b>
+          <b style={{ justifyContent:"right"}}        className="name-of-ngo">NGO Email Id:</b>
+          <b style={{ justifyContent:"right"}}    className="name-of-ngo">Password:</b>
         </div>
         <div className="frame-container">
-          <input style={{ border:"none"}} className="frame-item" />
-          <input style={{ border:"none"}} className="frame-item" />
-          <input style={{ border:"none"}} className="frame-item" />
-          <input type="email" style={{ border:"none"}} className="frame-item" />
-          <input type="password" style={{ border:"none"}} className="frame-item" />
+          <input value={ngoName} onChange={(e) => setngoName(e.target.value)} name="ngoName"                 style={{ border:"none"}} className="frame-item" />
+          <input value={ngoAddress} onChange={(e) => setngoAddress(e.target.value)} name="ngoAddress"        style={{ border:"none"}} className="frame-item" />
+          <input value={foundationId} onChange={(e) => setfoundationId(e.target.value)} name="foundationId"  style={{ border:"none"}} className="frame-item" />
+          <input value={email} onChange={(e) => setemail(e.target.value)} name="email"                       type="email" style={{ border:"none"}} className="frame-item" />
+          <input value={password} onChange={(e) => setpassword(e.target.value)} name="password"              type="password" style={{ border:"none"}} className="frame-item" />
         </div>
-        <button className="sign-in-wrapper" onclick={registerNGO}>
+        <button className="sign-in-wrapper" onClick={registerNGO}>
           <b className="log-in">Sign In</b>
         </button>
         <b className="already-have-an">Already have an account? Login</b>
