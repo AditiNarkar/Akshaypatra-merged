@@ -3,6 +3,8 @@ const router = express.Router();
 const {registerNgo, registerDonor,login,pickupRestaurant, donorDetails} = require('../services/functions.js')
 const {authenticateDonor, authenticateNgo} = require('../middleware/authenticate.js')
 const {NGO, HOTEL} = require('../models/usermodel.js')
+const { ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
 
 router.post('/registerNgo',registerNgo)
 router.post('/registerDonor',registerDonor)
@@ -95,9 +97,48 @@ router.delete('/pickupRestaurant', authenticateDonor, async(req,res)=>{
         }
 })
 
-router.route('/donationDetails')
-.get(authenticateDonor, (req,res) => {res.status(200).json({rootUser:req.rootUser})})
-.post(authenticateDonor, donorDetails)
+router.post('/addDonation', authenticateDonor, async(req,res)=> {
+
+        let {restoID, donation} = req.body
+    
+        for (const item of donation) {
+                for (const key in item) {
+                    if (item.hasOwnProperty(key) && item[key].trim() === '') {
+                        console.log(`Empty field "${key}" found in donation:`, item);
+                        return res.status(400).json({msg: "Please fill all fields"}); 
+                    }
+                }
+        }
+    
+        //try{
+                const donor = await HOTEL.findOne({_id:req.rootUser._id})
+        
+                if(!donor){
+                        return res.status(500).json({ status: 500 , msg: "Unauthorized access to donation page" });
+                }
+                
+                
+                donation = donation.map(d => {
+                        // Create a new object with existing properties and a new `_id` field
+                        return Object.assign({}, d, { _id: new mongoose.Types.ObjectId() });
+                });
+
+                const restaurant = donor.restraunts.find(restaurant => restaurant._id.equals(restoID));
+                console.log("restaurant", restaurant)
+
+                if (!restaurant) {
+                        return res.status(400).json({msg: "Resto Not Found"});
+                }
+                restaurant.donations.push(donation);
+
+                await donor.save();
+    
+                res.status(201).json({ status: 201, msg: "Donation added successfully" });
+        // }
+        // catch(err){
+        //     console.log("Error at adding donations", err)
+        // }
+})
 
 
 module.exports = router;

@@ -142,7 +142,7 @@ const DonorAddAddress = () => {
         <div style={{ height:"10px"}} className="add-wrapper" onClick={addAddress}>
           <b className="add">Add</b>
         </div>
-        <div style={{ height:"10px", top:"480px", left:"280px"}} className="add-wrapper" onClick={()=>window.location.href("http://localhost:3000/donation-form")}>
+        <div style={{ height:"10px", top:"480px", left:"280px"}} className="add-wrapper" onClick={()=>window.location.href="http://localhost:3000/donation-form"}>
           <b className="add">Proceed to Donate</b>
         </div>
         <div className="your-restaurants-parent">

@@ -51,27 +51,34 @@ const hotelSchema = new mongoose.Schema({
             },
             address: {
                 type : String
-            }
+            },
+            donations : [
+                {
+                    dish : {
+                        type : String
+                    },
+                    veg_nonveg : {
+                        type : String
+                    },
+                    prepHours : {
+                        type : Number
+                    },
+                    quantity : {
+                        type : Number
+                    },
+                    status : {
+                        type : String
+                    },
+                    pickedUp : {
+                        type : String
+                    },
+                    createdAt : {
+                        type : Date,
+                        default : Date.now
+                    }
+                }
+            ]
        }
-    ],
-    donations : [
-        {
-            dish : {
-                type : String
-            },
-            veg_nonveg : {
-                type : String
-            },
-            prepHours : {
-                type : Number
-            },
-            quantity : {
-                type : Number
-            },
-            status : {
-                type : String
-            }
-        }
     ]
 })
 

@@ -141,36 +141,36 @@ exports.login = async(req,res) => {
 //     }
 // }
 
-exports.donorDetails = async(req,res)=> {
-    const {dish, veg_nonveg, prepHours, quantity} = req.body
+// exports.donorDetails = async(req,res)=> {
+//     const {dish, veg_nonveg, prepHours, quantity} = req.body
 
-    if(!dish || !veg_nonveg || !prepHours || !quantity){
-        return res.status(400).json({msg: "Please fill all fields"})
-    }
+//     if(!dish || !veg_nonveg || !prepHours || !quantity){
+//         return res.status(400).json({msg: "Please fill all fields"})
+//     }
 
-    try{
-        const donor = await HOTEL.findOne({_id:req.rootUser._id})
+//     try{
+//         const donor = await HOTEL.findOne({_id:req.rootUser._id})
 
-        if(!donor){
-            return res.status(500).json({ status: 500 , msg: "Unauthorized access to donation page" });
-        }
+//         if(!donor){
+//             return res.status(500).json({ status: 500 , msg: "Unauthorized access to donation page" });
+//         }
 
-        const addDonation = {
-            dish: dish,
-            veg_nonveg: veg_nonveg, 
-            prepHours: prepHours,
-            quantity: quantity
-        }
-        const donation = await HOTEL.findOneAndUpdate({_id:req.rootUser._id},{$push : {donations : addDonation}}, {new : true} )
-        const donationIndex = donation.donations.length - 1
+//         const addDonation = {
+//             dish: dish,
+//             veg_nonveg: veg_nonveg, 
+//             prepHours: prepHours,
+//             quantity: quantity
+//         }
+//         const donation = await HOTEL.findOneAndUpdate({_id:req.rootUser._id},{$push : {donations : addDonation}}, {new : true} )
+//         const donationIndex = donation.donations.length - 1
     
-        const appendedDonation = donation.donations[donationIndex]
-        if (!donation) {
-            return res.status(500).json({ status: 500 , msg: "Error adding Donation" });
-        }
+//         const appendedDonation = donation.donations[donationIndex]
+//         if (!donation) {
+//             return res.status(500).json({ status: 500 , msg: "Error adding Donation" });
+//         }
 
-        res.status(201).json({ status: 201, msg: "Donation added successfully" });
-    }catch(err){
-        console.log("Error at adding donations", err)
-    }
-}
+//         res.status(201).json({ status: 201, msg: "Donation added successfully" });
+//     }catch(err){
+//         console.log("Error at adding donations", err)
+//     }
+// }
