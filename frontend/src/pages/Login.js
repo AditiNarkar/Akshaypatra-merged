@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const Login = () => {
 
-  const URL = "api/login"
+  const URL = "http://localhost:5000/api/login"
 
   const [donor, setDonor] = useState({
     identity:"", email:"", password:""

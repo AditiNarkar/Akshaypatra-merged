@@ -111,27 +111,50 @@ router.post('/addDonation', authenticateDonor, async(req,res)=> {
         }
     
         //try{
-                const donor = await HOTEL.findOne({_id:req.rootUser._id})
+                // const donor = await HOTEL.findOne({_id:req.rootUser._id})
         
-                if(!donor){
-                        return res.status(500).json({ status: 500 , msg: "Unauthorized access to donation page" });
-                }
+                // if(!donor){
+                //         return res.status(500).json({ status: 500 , msg: "Unauthorized access to donation page" });
+                // }
                 
                 
-                donation = donation.map(d => {
-                        // Create a new object with existing properties and a new `_id` field
-                        return Object.assign({}, d, { _id: new mongoose.Types.ObjectId() });
-                });
+                // donation = donation.map(d => {
+                //         // Create a new object with existing properties and a new `_id` field
+                //         return Object.assign({}, d, { _id: new mongoose.Types.ObjectId() });
+                // });
 
-                const restaurant = donor.restraunts.find(restaurant => restaurant._id.equals(restoID));
-                console.log("restaurant", restaurant)
+                // const restaurant = donor.restraunts.find(restaurant => restaurant._id.equals(restoID));
+                // console.log("restaurant", restaurant)
 
-                if (!restaurant) {
-                        return res.status(400).json({msg: "Resto Not Found"});
+                // if (!restaurant) {
+                //         return res.status(400).json({msg: "Resto Not Found"});
+                // }
+                // console.log("donation: ", donation)
+                // restaurant.donations.push(donation);
+
+                // await donor.save();
+
+
+
+                const hotel = await HOTEL.findOne({ _id: req.rootUser._id , "restraunts._id": restoID });
+
+                if (!hotel) {
+                        throw new Error('Hotel not found for the given donor and restaurant');
                 }
-                restaurant.donations.push(donation);
 
-                await donor.save();
+                // Find the index of the restaurant in the restraunts array
+                const restaurantIndex = hotel.restraunts.findIndex(restaurant => restaurant._id.equals(restoID));
+
+                if (restaurantIndex === -1) {
+                throw new Error('Restaurant not found');
+                }
+
+                // Set the donations array for the restaurant
+                hotel.restraunts[restaurantIndex].donations = donation;
+
+                // Save the updated hotel document
+                await hotel.save();
+
     
                 res.status(201).json({ status: 201, msg: "Donation added successfully" });
         // }
